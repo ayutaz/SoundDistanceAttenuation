@@ -4,11 +4,11 @@ namespace _Project
 {
     public class PlayerMove : MonoBehaviour
     {
-        private Game _game;
+        private GameInput _game;
 
         private void Awake()
         {
-            _game = new Game();
+            _game = new GameInput();
             _game.Enable();
         }
 
