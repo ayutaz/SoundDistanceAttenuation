@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace _Project
 {
@@ -16,7 +15,7 @@ namespace _Project
         private void Update()
         {
             var move = _game.Map.Move.ReadValue<Vector2>();
-            transform.Translate(move * Time.deltaTime * 2f);
+            transform.Translate(move * (Time.deltaTime * 2f));
         }
     }
 }
