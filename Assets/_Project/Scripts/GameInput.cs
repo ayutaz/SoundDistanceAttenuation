@@ -37,6 +37,15 @@ namespace _Project
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""UI"",
+                    ""type"": ""Button"",
+                    ""id"": ""3f17f4d7-81e0-4462-9662-63b8ad2a03a0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -138,6 +147,17 @@ namespace _Project
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a4d8e7ce-f62d-403d-a90d-29e1eecb0d92"",
+                    ""path"": ""*/{Menu}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UI"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -147,6 +167,7 @@ namespace _Project
             // Map
             m_Map = asset.FindActionMap("Map", throwIfNotFound: true);
             m_Map_Move = m_Map.FindAction("Move", throwIfNotFound: true);
+            m_Map_UI = m_Map.FindAction("UI", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -207,11 +228,13 @@ namespace _Project
         private readonly InputActionMap m_Map;
         private IMapActions m_MapActionsCallbackInterface;
         private readonly InputAction m_Map_Move;
+        private readonly InputAction m_Map_UI;
         public struct MapActions
         {
             private @GameInput m_Wrapper;
             public MapActions(@GameInput wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_Map_Move;
+            public InputAction @UI => m_Wrapper.m_Map_UI;
             public InputActionMap Get() { return m_Wrapper.m_Map; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -224,6 +247,9 @@ namespace _Project
                     @Move.started -= m_Wrapper.m_MapActionsCallbackInterface.OnMove;
                     @Move.performed -= m_Wrapper.m_MapActionsCallbackInterface.OnMove;
                     @Move.canceled -= m_Wrapper.m_MapActionsCallbackInterface.OnMove;
+                    @UI.started -= m_Wrapper.m_MapActionsCallbackInterface.OnUI;
+                    @UI.performed -= m_Wrapper.m_MapActionsCallbackInterface.OnUI;
+                    @UI.canceled -= m_Wrapper.m_MapActionsCallbackInterface.OnUI;
                 }
                 m_Wrapper.m_MapActionsCallbackInterface = instance;
                 if (instance != null)
@@ -231,6 +257,9 @@ namespace _Project
                     @Move.started += instance.OnMove;
                     @Move.performed += instance.OnMove;
                     @Move.canceled += instance.OnMove;
+                    @UI.started += instance.OnUI;
+                    @UI.performed += instance.OnUI;
+                    @UI.canceled += instance.OnUI;
                 }
             }
         }
@@ -238,6 +267,7 @@ namespace _Project
         public interface IMapActions
         {
             void OnMove(InputAction.CallbackContext context);
+            void OnUI(InputAction.CallbackContext context);
         }
     }
 }

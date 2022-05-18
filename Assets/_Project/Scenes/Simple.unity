@@ -204,7 +204,6 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   m_Layer: 0
@@ -214,14 +213,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,7 +460,7 @@ GameObject:
   - component: {fileID: 871885714}
   - component: {fileID: 871885715}
   m_Layer: 0
-  m_Name: _1
+  m_Name: "\u711A\u304D\u706B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -552,7 +543,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5e50055007d9c4542a9c48e101189192, type: 3}
+  m_audioClip: {fileID: 8300000, guid: eded516f087b8a14190704d36ae17e56, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -683,7 +674,7 @@ GameObject:
   - component: {fileID: 1324829892}
   - component: {fileID: 1324829893}
   m_Layer: 0
-  m_Name: _2
+  m_Name: "\u96E8"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -766,7 +757,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4aad12d930bb2904aa75bc19f143cf6a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a98c16dfa63982442ab3d707c6e6c79b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -863,6 +854,7 @@ GameObject:
   - component: {fileID: 1962360298}
   - component: {fileID: 1962360297}
   - component: {fileID: 1962360299}
+  - component: {fileID: 1962360300}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -950,6 +942,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 082cf28e556e468da95e215773f67fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &1962360300
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962360296}
+  m_Enabled: 1
 --- !u!1 &2066463753
 GameObject:
   m_ObjectHideFlags: 3
