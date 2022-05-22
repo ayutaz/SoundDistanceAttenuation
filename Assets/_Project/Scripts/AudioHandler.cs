@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Text;
+using UnityEngine;
 
 namespace _Project
 {
@@ -7,9 +8,12 @@ namespace _Project
         private AudioSource _audioSource;
         private float _maxDistance;
         [SerializeField] private AnimationCurve animationCurve;
+        private SpriteRenderer _spriteRenderer;
+        public string audioColor;
 
         private void Awake()
         {
+            _spriteRenderer = GetComponent<SpriteRenderer>();
             _audioSource = GetComponent<AudioSource>();
         }
 
@@ -17,6 +21,7 @@ namespace _Project
         {
             animationCurve = GetAnimationCurve();
             _maxDistance = _audioSource.maxDistance;
+            audioColor = ColorUtility.ToHtmlStringRGB(_spriteRenderer.color);
         }
 
         public float GetAudiValue(Vector3 playerPosition)
