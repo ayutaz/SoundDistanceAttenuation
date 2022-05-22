@@ -8,7 +8,7 @@
 
 * Unity 2021.3.2f1
 
-> **Warging**
+> **Warning**
 > 正常に動作するのは、現在 `Random` シーンのみです。
 
 > **Note**
