@@ -17,5 +17,10 @@ namespace _Project
             var move = _game.Map.Move.ReadValue<Vector2>();
             transform.Translate(move * (Time.deltaTime * 2f));
         }
+
+        public Vector3 GetPosition()
+        {
+            return transform.position;
+        }
     }
 }
