@@ -2505,13 +2505,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1020524698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffcdcf7065734e789654f1ef5ae1eabc, type: 3}
+  m_Script: {fileID: 11500000, guid: 62346a21fc4c4c5ea7ae041eaec3f572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   soundVisualizerView: {fileID: 1578229109}
   minAudioValue: 0.1
-  listenableAudioCount: 0
-  audioController: {fileID: 0}
+  audioHandlers: []
+  playerMove: {fileID: 1962360299}
 --- !u!1 &1129749177
 GameObject:
   m_ObjectHideFlags: 0
