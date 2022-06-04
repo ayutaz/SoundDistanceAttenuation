@@ -2509,9 +2509,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundVisualizerView: {fileID: 1578229109}
-  minAudioValue: 0.1
   audioHandlers: []
   playerMove: {fileID: 1962360299}
+  minAudioValue: 0.05
 --- !u!1 &1129749177
 GameObject:
   m_ObjectHideFlags: 0

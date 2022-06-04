@@ -11,6 +11,8 @@ namespace _Project
         private SpriteRenderer _spriteRenderer;
         [SerializeField, ReadOnly] public string audioColor;
         [SerializeField, ReadOnly] private Color32 audioColor32;
+        private float AudioDistance { get; set; }
+        private readonly VisualizerAudioData _visualizerAudioData = new VisualizerAudioData();
 
         private void Awake()
         {
@@ -28,8 +30,16 @@ namespace _Project
 
         public float GetAudiValue(Vector3 playerPosition)
         {
-            var distance = Vector3.Distance(transform.position, playerPosition);
-            return animationCurve.Evaluate(distance / _maxDistance);
+            AudioDistance = Vector3.Distance(transform.position, playerPosition);
+            return animationCurve.Evaluate(AudioDistance / _maxDistance);
+        }
+
+        public VisualizerAudioData GetVisualizerAudioData(Vector3 playerPosition)
+        {
+            _visualizerAudioData.AudioValue = GetAudiValue(playerPosition);
+            _visualizerAudioData.AudioVector = playerPosition - transform.position;
+            _visualizerAudioData.AudioColor = audioColor32;
+            return _visualizerAudioData;
         }
 
         private AnimationCurve GetAnimationCurve()

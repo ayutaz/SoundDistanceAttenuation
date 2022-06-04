@@ -4,16 +4,21 @@ namespace _Project
 {
     public class VisualizerModel
     {
-        private readonly float[] _visualiserData;
+        private readonly VisualizerAudioData[] _visualiserData;
         private readonly float _minValue;
 
         public VisualizerModel(int visualizerMaxDataCount, float minValue)
         {
-            _visualiserData = new float[visualizerMaxDataCount];
-            this._minValue = minValue;
+            _visualiserData = new VisualizerAudioData[visualizerMaxDataCount];
+            for (var index = 0; index < visualizerMaxDataCount; index++)
+            {
+                _visualiserData[index] = new VisualizerAudioData();
+            }
+
+            _minValue = minValue;
         }
 
-        public float[] GetVisualizerData()
+        public VisualizerAudioData[] GetVisualizerData()
         {
             return _visualiserData;
         }
@@ -22,15 +27,17 @@ namespace _Project
         {
             if (data.AudioValue <= _minValue) return;
             var angle = Vector2ToAngle(data.AudioVector);
-            Debug.Log($"value:{data.AudioValue}, angle:{angle}");
-            _visualiserData[VisualizerDataIndex(angle)] = data.AudioValue;
+
+            var oldValue = _visualiserData[VisualizerDataIndex(angle)].AudioValue;
+            if (oldValue < data.AudioValue)
+            {
+                _visualiserData[VisualizerDataIndex(angle)] = data;
+            }
         }
 
-        private static int VisualizerDataIndex(float angle)
+        public int VisualizerDataIndex(float angle)
         {
-            var i = Mathf.CeilToInt(360f / angle);
-            Debug.Log("i: " + i);
-            return i;
+            return Mathf.CeilToInt(angle / (360f / _visualiserData.Length));
         }
 
         public static float Vector2ToAngle(Vector2 vector2)

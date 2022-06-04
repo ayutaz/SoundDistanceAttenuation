@@ -8,6 +8,7 @@ namespace _Project
     public class SoundVisualizerView : MonoBehaviour
     {
         [SerializeField] private List<Image> visualizerImageList;
+        public int MaxVisualizerCount => visualizerImageList.Count;
 
         private void Awake()
         {
@@ -23,6 +24,17 @@ namespace _Project
             foreach (var image in visualizerImageList)
             {
                 image.color = RandomColor();
+            }
+        }
+
+        public void UpdateVisualizerValue(VisualizerAudioData[] valueList)
+        {
+            for (var valueIndex = 0; valueIndex < valueList.Length; valueIndex++)
+            {
+                var value = valueList[valueIndex];
+                var image = visualizerImageList[valueIndex];
+                image.color = value.AudioColor;
+                image.fillAmount = value.AudioValue;
             }
         }
 
