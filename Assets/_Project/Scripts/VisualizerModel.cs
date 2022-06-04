@@ -37,7 +37,7 @@ namespace _Project
 
         private int VisualizerDataIndex(float angle)
         {
-            return Mathf.CeilToInt(angle / (360f / _visualiserData.Length));
+            return Mathf.CeilToInt(angle / (360f / _visualiserData.Length)) - 1;
         }
 
         public static float Vector2ToAngle(Vector2 vector2)
