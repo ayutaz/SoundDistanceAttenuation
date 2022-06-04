@@ -35,7 +35,7 @@ namespace _Project
             }
         }
 
-        public int VisualizerDataIndex(float angle)
+        private int VisualizerDataIndex(float angle)
         {
             return Mathf.CeilToInt(angle / (360f / _visualiserData.Length));
         }
