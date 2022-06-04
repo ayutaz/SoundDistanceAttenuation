@@ -18,6 +18,14 @@ namespace _Project
             }
         }
 
+        public void UpdateVisualizerColor()
+        {
+            foreach (var image in visualizerImageList)
+            {
+                image.color = RandomColor();
+            }
+        }
+
         private static Color32 RandomColor()
         {
             return new Color32(
