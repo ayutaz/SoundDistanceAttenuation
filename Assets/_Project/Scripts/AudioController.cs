@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace _Project
@@ -7,9 +8,20 @@ namespace _Project
     public class AudioController : MonoBehaviour
     {
         [SerializeField] private AudioDebug audioDebug;
-        [SerializeField] private List<AudioHandler> audioHandlerList;
+        [SerializeField, ReadOnly] private List<AudioHandler> audioHandlerList;
         [SerializeField] private PlayerMove playerMove;
         private readonly StringBuilder _stringBuilder = new StringBuilder();
+
+        private void Awake()
+        {
+            var handlerList = FindObjectsOfType<AudioHandler>();
+            foreach (var audioHandler in handlerList)
+            {
+                audioHandlerList.Add(audioHandler);
+            }
+
+            playerMove = FindObjectOfType<PlayerMove>();
+        }
 
 
         private void Update()
