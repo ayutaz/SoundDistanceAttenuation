@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.cysharp.unitask": "2.3.1",
+    "com.dbrizov.naughtyattributes": "2.1.4",
     "com.neuecc.unirx": "7.1.0",
     "com.unity.cinemachine": "2.8.6",
     "com.unity.collab-proxy": "1.15.18",
@@ -59,7 +60,8 @@
         "com.neuecc",
         "com.cysharp",
         "com.yasirkula.assetusagedetector",
-        "jp.ayutaz.simplefoldericon"
+        "jp.ayutaz.simplefoldericon",
+        "com.dbrizov.naughtyattributes"
       ]
     }
   ]
