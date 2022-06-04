@@ -1,6 +1,6 @@
 # SoundDistanceAttenuation
 
-# [Demo](https://unityroom.com/games/sounddistanceattenuation)
+# [Demo](https://ayutaz.github.io/SoundDistanceAttenuation/WebGL/WebGL/)
 
 ![](Docs/AudioDemo.gif)
 
