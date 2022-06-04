@@ -26,6 +26,25 @@ namespace _Project
             }
         }
 
+        public void RandomVisualizerValue()
+        {
+            foreach (var image in visualizerImageList)
+            {
+                if (image.fillAmount is > 0f and < 1f)
+                {
+                    image.fillAmount += Random.Range(-0.01f, 0.01f);
+                }
+                else if (image.fillAmount == 0f)
+                {
+                    image.fillAmount += 0.01f;
+                }
+                else if (image.fillAmount <= 1f)
+                {
+                    image.fillAmount -= 0.01f;
+                }
+            }
+        }
+
         private static Color32 RandomColor()
         {
             return new Color32(

@@ -25,9 +25,9 @@ namespace _Project
                 .Subscribe(_ => { soundVisualizerView.UpdateVisualizerColor(); }).AddTo(this);
         }
 
-
         private void Update()
         {
+            soundVisualizerView.RandomVisualizerValue();
         }
     }
 }
