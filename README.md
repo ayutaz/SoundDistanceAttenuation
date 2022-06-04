@@ -8,7 +8,7 @@
 
 # requirements
 
-* Unity 2021.3.3f1
+* Unity 2021.3.4f1
 
 > **Warning**
 > 正常に動作するのは、現在 `Random` シーンのみです。
