@@ -1,4 +1,6 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
+using UniRx;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +14,13 @@ namespace _Project
         {
             SetSceneName();
             changeSceneDropdown.value = SceneManager.GetActiveScene().buildIndex;
+        }
+
+        private void Start()
+        {
+            changeSceneDropdown.ObserveEveryValueChanged(value => value.value)
+                .Skip(1)
+                .Subscribe(selectSceneValue => { SceneManager.LoadSceneAsync(selectSceneValue); }).AddTo(this);
         }
 
         private void SetSceneName()
