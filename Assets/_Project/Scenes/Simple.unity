@@ -768,7 +768,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: eded516f087b8a14190704d36ae17e56, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5e50055007d9c4542a9c48e101189192, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -872,6 +872,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  audioColor: 
 --- !u!1 &1020524698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,7 +1002,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a98c16dfa63982442ab3d707c6e6c79b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4aad12d930bb2904aa75bc19f143cf6a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1105,6 +1106,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  audioColor: 
 --- !u!1 &1761591686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,8 +1222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioDebug: {fileID: 336613720}
-  audioHandlerRight: {fileID: 871885716}
-  audioHandlerLeft: {fileID: 1324829894}
+  audioHandlerList: []
   playerMove: {fileID: 1962360299}
 --- !u!1 &1962360296
 GameObject:
