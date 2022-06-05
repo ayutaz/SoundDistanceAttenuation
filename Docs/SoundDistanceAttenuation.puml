@@ -1,0 +1,27 @@
+﻿@startuml
+'https://plantuml.com/class-diagram
+
+namespace _Project{
+    class AudioController
+    class AudioDebug
+    class AudioHandler
+    class ChangeScene
+    class GameInput
+    class PlayerMove
+    class SoundVisualizerController
+    class SoundVisualizerView
+    class VisualizerModel
+    class VisualizerAudioData
+    
+    PlayerMove ..> GameInput
+    VisualizerModel ..> VisualizerAudioData
+    SoundVisualizerController ..> PlayerMove
+    SoundVisualizerController ..> VisualizerModel
+    SoundVisualizerController ..> SoundVisualizerView
+    
+    AudioController ..> AudioDebug
+    AudioController ..> PlayerMove
+    AudioController ..> AudioHandler
+}
+
+@enduml

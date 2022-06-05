@@ -41,3 +41,8 @@
 * サウンドビジュアライザーはテキストベース
 
 ![](Docs/Simple.jpg)
+
+
+# class diagram
+
+![](Docs/SoundDistanceAttenuation.png)
